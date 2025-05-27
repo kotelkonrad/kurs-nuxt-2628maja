@@ -2,7 +2,8 @@
   <header class="bg-green-600 text-white p-4">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-wrap items-center justify-between gap-4">
-        <NuxtLink to="/">
+        <NuxtLink to="/" class="flex items-center gap-2">
+          <span class="material-symbols-outlined">eco</span>
           <h1 class="text-2xl font-bold whitespace-nowrap">Green Allegro</h1>
         </NuxtLink>
 
@@ -14,19 +15,31 @@
             <option>Dom</option>
             <option>Elektronika</option>
           </select>
-          <button class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3">SZUKAJ</button>
+          <button class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 flex items-center gap-1">
+            <span class="material-symbols-outlined">search</span> SZUKAJ
+          </button>
         </div>
 
-        <nav class="space-x-4 hidden md:flex">
-          <NuxtLink to="/" class="hover:underline">Home</NuxtLink>
-          <a href="#" class="hover:underline">Kategorie</a>
-          <a href="#" class="hover:underline">Promocje</a>
-          <a href="#" class="hover:underline">Kontakt</a>
+        <nav class="space-x-4 hidden md:flex items-center">
+          <NuxtLink to="/" class="hover:underline flex items-center gap-1">
+            <span class="material-symbols-outlined">home</span>Home
+          </NuxtLink>
+          <a href="#" class="hover:underline flex items-center gap-1">
+            <span class="material-symbols-outlined">category</span>Kategorie
+          </a>
+          <a href="#" class="hover:underline flex items-center gap-1">
+            <span class="material-symbols-outlined">sell</span>Promocje
+          </a>
+          <a href="#" class="hover:underline flex items-center gap-1">
+            <span class="material-symbols-outlined">contact_support</span>Kontakt
+          </a>
         </nav>
 
         <!-- Hamburger for mobile -->
         <div class="md:hidden">
-          <button @click="toggleMenu" class="text-white text-2xl focus:outline-none">☰</button>
+          <button @click="toggleMenu" class="text-white text-2xl focus:outline-none">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
         </div>
       </div>
 
@@ -39,7 +52,9 @@
             <option>Dom</option>
             <option>Elektronika</option>
           </select>
-          <button class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-3 w-full">SZUKAJ</button>
+          <button class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-3 w-full flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined">search</span> SZUKAJ
+          </button>
         </div>
       </div>
     </div>
@@ -65,10 +80,18 @@
       isMenuOpen ? 'max-h-screen' : 'max-h-0'
     ]">
       <div class="px-4 pt-4 pb-2">
-        <a href="#" class="block py-2 text-white hover:underline">Home</a>
-        <a href="#" class="block py-2 text-white hover:underline">Kategorie</a>
-        <a href="#" class="block py-2 text-white hover:underline">Promocje</a>
-        <a href="#" class="block py-2 text-white hover:underline">Kontakt</a>
+        <a href="#" class="block py-2 text-white hover:underline flex items-center gap-1">
+          <span class="material-symbols-outlined">home</span>Home
+        </a>
+        <a href="#" class="block py-2 text-white hover:underline flex items-center gap-1">
+          <span class="material-symbols-outlined">category</span>Kategorie
+        </a>
+        <a href="#" class="block py-2 text-white hover:underline flex items-center gap-1">
+          <span class="material-symbols-outlined">sell</span>Promocje
+        </a>
+        <a href="#" class="block py-2 text-white hover:underline flex items-center gap-1">
+          <span class="material-symbols-outlined">contact_support</span>Kontakt
+        </a>
       </div>
     </div>
   </header>
