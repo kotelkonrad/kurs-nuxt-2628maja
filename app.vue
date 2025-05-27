@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <header class="bg-green-600 text-white p-4">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-wrap items-center justify-between gap-4">
@@ -105,11 +104,5 @@
       <p>&copy; 2025 Green Allegro. Wszystkie prawa zastrzeżone.</p>
     </div>
   </footer>
-=======
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
-  <CookieConsent />
->>>>>>> 2166a03ddb1eed2d3a5fdbc13d601f027be496c5
 </template>
 <script setup></script>
