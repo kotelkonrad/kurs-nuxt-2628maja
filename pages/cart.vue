@@ -15,6 +15,15 @@
           :product="item"
           @update:quantity="(val, id) => updateQuantity(id, val)"
         />
+        <!-- Przykład usuwania produktu -->
+        <button
+          v-for="item in cartItems"
+          :key="'remove-' + item.id"
+          class="text-red-600 underline ml-2"
+          @click="removeItem(item.id)"
+        >
+          Usuń {{ item.title }}
+        </button>
       </div>
 
       <p v-else class="text-center text-gray-600 py-12">Koszyk jest pusty.</p>
@@ -39,8 +48,9 @@
       <button
         class="w-full bg-green-600 hover:bg-green-700 text-white font-bold 
         py-3 mb-2"
+        @click="addRandomProduct"
       >
-        DOSTAWA I PŁATNOŚĆ
+        DODAJ LOSOWY PRODUKT
       </button>
       <a href="#" class="text-green-600 hover:underline block text-center"
         >Kontynuuj zakupy</a
@@ -50,6 +60,8 @@
 </template>
 
 <script lang="ts" setup>
+import { ref, computed, watch } from 'vue'
+
 const cartItems = ref([
   {
     id: 1,
@@ -75,19 +87,47 @@ const cartItems = ref([
     quantity: 1,
     image: "https://picsum.photos/122/80",
   },
-]);
+])
 
 function updateQuantity(id: number, newQuantity: number) {
-  const item = cartItems.value.find((p) => p.id === id);
-  if (item) item.quantity = newQuantity;
+  const item = cartItems.value.find((p) => p.id === id)
+  if (item) item.quantity = newQuantity
 }
 
+// computed - obliczanie sumy
 const totalPrice = computed(() => {
   return cartItems.value.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0,
-  );
-});
+  )
+})
+
+// watch - obserwacja zmian w koszyku
+watch(cartItems, (nowa, stara) => {
+  console.log('Koszyk się zmienił:', nowa)
+}, { deep: true })
+
+// splice - usuwanie produktu po id
+function removeItem(id: number) {
+  const idx = cartItems.value.findIndex(item => item.id === id)
+  if (idx !== -1) {
+    cartItems.value.splice(idx, 1)
+  }
+}
+
+// push - dodawanie nowego produktu
+function addRandomProduct() {
+  const produkty = [
+    { id: 4, title: "Koc bawełniany", price: 99, description: "Miękki koc", image: "https://picsum.photos/123/80" },
+    { id: 5, title: "Prześcieradło 160x200", price: 49, description: "Białe prześcieradło", image: "https://picsum.photos/124/80" }
+  ]
+  // filter + includes - dodaj tylko, jeśli nie ma już produktu o tym id
+  const istniejąceId = cartItems.value.map(item => item.id)
+  const doDodania = produkty.filter(p => !istniejąceId.includes(p.id))
+  if (doDodania.length > 0) {
+    cartItems.value.push({ ...doDodania[0], quantity: 1 })
+  }
+}
 </script>
 
 <style scoped></style>
