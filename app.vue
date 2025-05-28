@@ -8,14 +8,24 @@
         </NuxtLink>
 
         <!-- Desktop search bar -->
-        <div class="desktop-search hidden md:flex flex-1 max-w-2xl bg-white rounded overflow-hidden">
-          <input type="text" placeholder="Czego szukasz?" class="w-full px-4 py-3 text-black focus:outline-none" />
-          <select class="bg-white text-black px-4 py-3 border-l border-gray-300 focus:outline-none">
+        <div
+          class="desktop-search hidden md:flex flex-1 max-w-2xl bg-white rounded overflow-hidden"
+        >
+          <input
+            type="text"
+            placeholder="Czego szukasz?"
+            class="w-full px-4 py-3 text-black focus:outline-none"
+          />
+          <select
+            class="bg-white text-black px-4 py-3 border-l border-gray-300 focus:outline-none"
+          >
             <option>Wszystkie kategorie</option>
             <option>Dom</option>
             <option>Elektronika</option>
           </select>
-          <button class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 flex items-center gap-1">
+          <button
+            class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 flex items-center gap-1"
+          >
             <span class="material-symbols-outlined">search</span> SZUKAJ
           </button>
         </div>
@@ -31,13 +41,17 @@
             <span class="material-symbols-outlined">sell</span>Promocje
           </a>
           <a href="#" class="hover:underline flex items-center gap-1">
-            <span class="material-symbols-outlined">contact_support</span>Kontakt
+            <span class="material-symbols-outlined">contact_support</span
+            >Kontakt
           </a>
         </nav>
 
         <!-- Hamburger for mobile -->
         <div class="md:hidden">
-          <button @click="toggleMenu" class="text-white text-2xl focus:outline-none">
+          <button
+            @click="toggleMenu"
+            class="text-white text-2xl focus:outline-none"
+          >
             <span class="material-symbols-outlined">menu</span>
           </button>
         </div>
@@ -46,13 +60,21 @@
       <!-- Mobile search bar + special for max-1100px -->
       <div class="custom-mobile-search hidden mt-4">
         <div class="flex flex-col w-full bg-white">
-          <input type="text" placeholder="Czego szukasz?" class="w-full px-4 py-3 text-black focus:outline-none" />
-          <select class="bg-white text-black px-4 py-3 border-t border-gray-300 focus:outline-none appearance-none">
+          <input
+            type="text"
+            placeholder="Czego szukasz?"
+            class="w-full px-4 py-3 text-black focus:outline-none"
+          />
+          <select
+            class="bg-white text-black px-4 py-3 border-t border-gray-300 focus:outline-none appearance-none"
+          >
             <option>Wszystkie kategorie</option>
             <option>Dom</option>
             <option>Elektronika</option>
           </select>
-          <button class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-3 w-full flex items-center justify-center gap-1">
+          <button
+            class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-3 w-full flex items-center justify-center gap-1"
+          >
             <span class="material-symbols-outlined">search</span> SZUKAJ
           </button>
         </div>
@@ -75,21 +97,36 @@
 
   Dzięki połączeniu transition i max-height uzyskujemy płynny efekt rozwijania/zwijania menu bez użycia JavaScript do manipulacji stylem
 -->
-    <div id="mobile-menu" :class="[
-      'md:hidden overflow-hidden transition-all duration-300 bg-green-700',
-      isMenuOpen ? 'max-h-screen' : 'max-h-0'
-    ]">
+    <div
+      id="mobile-menu"
+      :class="[
+        'md:hidden overflow-hidden transition-all duration-300 bg-green-700',
+        isMenuOpen ? 'max-h-screen' : 'max-h-0',
+      ]"
+    >
       <div class="px-4 pt-4 pb-2">
-        <a href="#" class="block py-2 text-white hover:underline flex items-center gap-1">
+        <a
+          href="#"
+          class="block py-2 text-white hover:underline flex items-center gap-1"
+        >
           <span class="material-symbols-outlined">home</span>Home
         </a>
-        <a href="#" class="block py-2 text-white hover:underline flex items-center gap-1">
+        <a
+          href="#"
+          class="block py-2 text-white hover:underline flex items-center gap-1"
+        >
           <span class="material-symbols-outlined">category</span>Kategorie
         </a>
-        <a href="#" class="block py-2 text-white hover:underline flex items-center gap-1">
+        <a
+          href="#"
+          class="block py-2 text-white hover:underline flex items-center gap-1"
+        >
           <span class="material-symbols-outlined">sell</span>Promocje
         </a>
-        <a href="#" class="block py-2 text-white hover:underline flex items-center gap-1">
+        <a
+          href="#"
+          class="block py-2 text-white hover:underline flex items-center gap-1"
+        >
           <span class="material-symbols-outlined">contact_support</span>Kontakt
         </a>
       </div>

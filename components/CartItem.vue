@@ -1,7 +1,6 @@
 <template>
   <div
-    class="bg-white p-4 rounded shadow flex flex-col md:flex-row justify-between 
-    items-center gap-4"
+    class="bg-white p-4 rounded shadow flex flex-col md:flex-row justify-between items-center gap-4"
   >
     <img :src="product.image" class="rounded border" alt="Produkt" />
     <div class="flex-1">

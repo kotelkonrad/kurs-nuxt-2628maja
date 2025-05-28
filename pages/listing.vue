@@ -71,9 +71,7 @@
 
     <!-- Sekcja z produktami -->
     <section class="md:col-span-3">
-      <h2 class="text-2xl font-bold mb-6">
-        Lista produktów
-      </h2>
+      <h2 class="text-2xl font-bold mb-6">Lista produktów</h2>
       <div class="grid gap-6">
         <div v-if="pending">Ładowanie...</div>
         <div v-else-if="error">Błąd: {{ error.message }}</div>
@@ -100,8 +98,7 @@
                 {{ product.price.toFixed(2) }} zł
               </p>
               <button
-                class="mt-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 
-                font-semibold"
+                class="mt-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 font-semibold"
               >
                 Dodaj do koszyka
               </button>
